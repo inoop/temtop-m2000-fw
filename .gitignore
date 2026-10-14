@@ -1,0 +1,9 @@
+target/
+*.bin
+*.dfu
+*.elf
+*.hex
+.DS_Store
+.vscode/
+.idea/
+__pycache__/

@@ -1,0 +1,24 @@
+[package]
+name = "temtop-fw"
+version = "0.1.0"
+edition = "2021"
+description = "Open firmware for the Temtop M2000 air quality monitor"
+license = "MIT"
+repository = "https://github.com/inoop/temtop-m2000-fw"
+publish = false
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = { version = "0.7", features = ["device"] }
+panic-halt = "0.2"
+stm32f1xx-hal = { version = "0.11", features = ["stm32f103", "high"] }
+stm32-usbd = "0.7"
+usb-device = "0.3"
+usbd-serial = "0.2"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+debug = 2
